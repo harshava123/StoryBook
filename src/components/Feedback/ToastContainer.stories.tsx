@@ -7,12 +7,66 @@ const meta: Meta<typeof ToastContainer> = {
   component: ToastContainer,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## Toast Container Component
+
+The ToastContainer manages the positioning and stacking of Toast components. It provides a consistent location for displaying notifications in the user interface.
+
+### Usage
+
+ToastContainer should be placed once per application or view, typically at the root level. All Toast components should be children of this container.
+
+### Accessibility
+
+- Uses ARIA live region for screen readers
+- Manages focus appropriately
+- Handles keyboard navigation between toasts
+
+### Responsiveness
+
+The ToastContainer positions toasts appropriately on all screen sizes, ensuring they don't obstruct critical UI elements.
+
+### Best Practices
+
+#### Do
+- Place a single ToastContainer per view/application
+- Position toasts where they won't obstruct important UI actions
+- Consider z-index to ensure toasts appear above other UI elements
+- Choose a consistent position to build user familiarity
+
+#### Don't
+- Place ToastContainers inside scrollable containers
+- Use multiple conflicting toast positions in the same application
+- Position toasts where they obscure critical information or actions
+`,
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
     position: {
       control: 'select',
       options: ['top-left', 'top-right', 'bottom-left', 'bottom-right'],
+      description: 'The position of the toast container within the viewport',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'top-right' },
+      },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes to apply',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    children: {
+      description: 'The Toast components to display',
+      table: {
+        type: { summary: 'React.ReactNode' },
+      },
     },
   },
 };
@@ -50,6 +104,13 @@ export const MultipleToasts: Story = {
   args: {
     position: 'top-right',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Multiple toasts can be displayed in the same container. They will stack according to their order in the DOM.',
+      },
+    },
+  },
 };
 
 export const TopLeft: Story = {
@@ -66,6 +127,13 @@ export const TopLeft: Story = {
   ),
   args: {
     position: 'top-left',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Positioning toasts in the top-left is useful for LTR languages where reading starts from the left.',
+      },
+    },
   },
 };
 
@@ -84,6 +152,13 @@ export const BottomRight: Story = {
   args: {
     position: 'bottom-right',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Bottom-right positioning is useful for notifications that shouldn\'t interrupt the main content flow.',
+      },
+    },
+  },
 };
 
 export const BottomLeft: Story = {
@@ -100,5 +175,12 @@ export const BottomLeft: Story = {
   ),
   args: {
     position: 'bottom-left',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Bottom-left positioning can be useful for less critical notifications in RTL interfaces.',
+      },
+    },
   },
 }; 
