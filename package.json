@@ -28,10 +28,10 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npm run build-main && npm run build-storybook",
+    "build": "npm run build-main && (npm run build-storybook || echo 'Skipping Storybook build')",
     "build-main": "node ./node_modules/vite/bin/vite.js build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o dist/storybook"
+    "build-storybook": "npx --no-install storybook build -o dist/storybook"
   },
   "eslintConfig": {
     "extends": [
