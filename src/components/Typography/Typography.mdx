@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Typography } from './Typography';
+
+<Meta title="Design System/Typography/Docs" component={Typography} />
+
+# Typography Component
+
+The Typography component is the foundation of textual presentation in our design system. It provides consistent styling for all text elements including headings, body text, and supporting text elements.
+
+## Anatomy
+
+The Typography component:
+- Maps to appropriate semantic HTML elements (h1-h6, p, span)
+- Applies consistent styling based on variant
+- Supports customization for weight, color, and custom classes
+
+<Canvas>
+  <Story id="design-system-typography--heading1" />
+</Canvas>
+
+## Accessibility
+
+- Uses semantic HTML elements with correct heading hierarchy (h1-h6)
+- Maintains a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text
+- Font sizes are responsive and scale appropriately on different devices
+- Line heights ensure proper readability
+
+## Hierarchy
+
+### Headings
+
+<Canvas>
+  <Story id="design-system-typography--heading1" />
+  <Story id="design-system-typography--heading2" />
+  <Story id="design-system-typography--heading3" />
+</Canvas>
+
+### Body Text
+
+<Canvas>
+  <Story id="design-system-typography--body1" />
+  <Story id="design-system-typography--body2" />
+</Canvas>
+
+### Supporting Text
+
+<Canvas>
+  <Story id="design-system-typography--caption" />
+  <Story id="design-system-typography--label" />
+  <Story id="design-system-typography--helper" />
+</Canvas>
+
+## Customization
+
+### Color Variants
+
+<Canvas>
+  <Story id="design-system-typography--with-custom-color" />
+</Canvas>
+
+### Weight Variants
+
+<Canvas>
+  <Story id="design-system-typography--with-custom-weight" />
+</Canvas>
+
+## Responsiveness
+
+<Canvas>
+  <Story id="design-system-typography--responsive-typography" />
+</Canvas>
+
+## Best Practices
+
+### Do
+- Use appropriate heading levels (h1-h6) to maintain document hierarchy
+- Keep paragraphs concise and scannable
+- Use helper text to provide additional context when needed
+
+### Don't
+- Skip heading levels (e.g., h1 to h3, skipping h2)
+- Use typography for purely decorative purposes without semantic meaning
+- Override the component styles directly; use the provided props instead
+
+## API Reference
+
+<ArgsTable of={Typography} /> 

@@ -1,0 +1,89 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Toast } from './Toast';
+
+<Meta title="Design System/Feedback/Toast/Docs" component={Toast} />
+
+# Toast Component
+
+The Toast component provides a way to display brief, non-intrusive notifications to the user. Toasts are used to show confirmation messages, alerts, and other time-sensitive information.
+
+## Anatomy
+
+A Toast consists of:
+- Icon (variant-specific)
+- Title (optional)
+- Message
+- Close button (optional)
+
+<Canvas>
+  <Story id="design-system-feedback-toast--info" />
+</Canvas>
+
+## Accessibility
+
+- Uses appropriate ARIA roles (role="alert")
+- Has sufficient color contrast for all states
+- Can be dismissed with keyboard (close button)
+- Automatically closes after a configurable duration
+- Uses semantic colors to convey meaning
+
+## Mount/Unmount Behavior
+
+- Toasts appear with a smooth fade-in transition
+- Toasts are removed from the DOM after closing animation
+- Toasts can be set to auto-dismiss after a specified duration
+
+## Variants
+
+### Semantic Variants
+
+<Canvas>
+  <Story id="design-system-feedback-toast--info" />
+  <Story id="design-system-feedback-toast--success" />
+  <Story id="design-system-feedback-toast--error" />
+  <Story id="design-system-feedback-toast--warning" />
+</Canvas>
+
+### With/Without Title
+
+<Canvas>
+  <Story id="design-system-feedback-toast--info" />
+  <Story id="design-system-feedback-toast--without-title" />
+</Canvas>
+
+### With/Without Close Button
+
+<Canvas>
+  <Story id="design-system-feedback-toast--info" />
+  <Story id="design-system-feedback-toast--without-close-button" />
+</Canvas>
+
+## Duration
+
+<Canvas>
+  <Story id="design-system-feedback-toast--long-duration" />
+</Canvas>
+
+## Keyboard Interaction
+
+- **Tab**: Navigates to the close button
+- **Enter/Space**: Activates the close button if focused
+- **Escape**: Can be configured to close all active toasts
+
+## Best Practices
+
+### Do
+- Use appropriate variants for different message types
+- Keep messages concise and actionable
+- Set appropriate auto-dismiss durations based on importance
+- Consider positioning toasts consistently in your application
+
+### Don't
+- Use toasts for critical information requiring immediate action
+- Display multiple toasts simultaneously if possible
+- Use toasts for complex interactions
+- Rely solely on color to communicate meaning
+
+## API Reference
+
+<ArgsTable of={Toast} /> 

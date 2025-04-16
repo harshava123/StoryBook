@@ -1,0 +1,99 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { TextInput } from './TextInput';
+
+<Meta title="Design System/Data Entry/Text Input/Docs" component={TextInput} />
+
+# Text Input Component
+
+The TextInput component allows users to input text data. It supports various states, sizes, and variants to accommodate different UI requirements.
+
+## Anatomy
+
+The TextInput consists of:
+- Label (optional)
+- Input field
+- Helper text (optional)
+- Error message (when in error state)
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--default" />
+</Canvas>
+
+## Accessibility
+
+- Includes proper labeling with `label` elements
+- Uses `aria-invalid` for error states
+- Connects helper text via `aria-describedby`
+- Supports keyboard navigation
+- Maintains 3:1 contrast ratio for borders and 4.5:1 for text
+- Includes focus indicators
+
+## Keyboard Interaction
+
+- **Tab**: Focuses the input
+- **Shift+Tab**: Moves focus to the previous focusable element
+- **Enter**: Submits the form if the input is part of a form
+
+## Variants
+
+### States
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--default" />
+  <Story id="design-system-data-entry-text-input--error-state" />
+  <Story id="design-system-data-entry-text-input--success-state" />
+  <Story id="design-system-data-entry-text-input--warning-state" />
+</Canvas>
+
+### Sizes
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--small-size" />
+  <Story id="design-system-data-entry-text-input--default" />
+  <Story id="design-system-data-entry-text-input--large-size" />
+</Canvas>
+
+### Visual Styles
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--default" />
+  <Story id="design-system-data-entry-text-input--filled-variant" />
+  <Story id="design-system-data-entry-text-input--flushed-variant" />
+</Canvas>
+
+## Helper Text & Validation
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--with-helper-text" />
+  <Story id="design-system-data-entry-text-input--error-state" />
+</Canvas>
+
+## Input Types
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--password-type" />
+  <Story id="design-system-data-entry-text-input--email-type" />
+</Canvas>
+
+## Responsive Layout
+
+<Canvas>
+  <Story id="design-system-data-entry-text-input--responsive-layout" />
+</Canvas>
+
+## Best Practices
+
+### Do
+- Always provide a label for the input
+- Use helper text to provide additional context when needed
+- Use appropriate validation states (error, success, warning)
+- Use appropriate input types (email, password, etc.)
+
+### Don't
+- Use placeholder text as a replacement for labels
+- Use generic error messages; be specific about requirements
+- Disable form controls unless absolutely necessary
+
+## API Reference
+
+<ArgsTable of={TextInput} /> 

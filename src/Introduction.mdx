@@ -1,0 +1,92 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Introduction" />
+
+# Enterprise Design System
+
+Welcome to our comprehensive design system built with React, TypeScript, TailwindCSS, and Storybook. This design system provides a set of reusable components, patterns, and guidelines to help you build consistent, accessible, and high-quality user interfaces.
+
+## Components
+
+This design system includes the following components:
+
+### Typography
+- Headings (H1-H6)
+- Body text (body1, body2)
+- Captions, labels, and helper text
+
+### Data Entry
+- Text Input with various states, sizes, and variants
+
+### Feedback
+- Toast/Notification components
+- Toast Container for positioning
+
+## Core Features
+
+- **Fully Typed**: Complete TypeScript definitions for all components
+- **Accessibility**: WCAG 2.1 compliance with proper ARIA attributes
+- **Responsive**: Mobile-first design that works on all devices
+- **Themeable**: Support for light/dark modes and brand theming
+- **Scalable**: Component architecture designed for reuse and extension
+- **Well Documented**: Comprehensive Storybook documentation
+
+## Getting Started
+
+To use these components in your project:
+
+1. Install the package:
+```bash
+npm install design-system
+```
+
+2. Import the components:
+```jsx
+import { Typography, TextInput, Toast, ToastContainer } from 'design-system';
+```
+
+3. Use the components in your React application:
+```jsx
+function App() {
+  return (
+    <div>
+      <Typography variant="h1">Hello World</Typography>
+      <TextInput 
+        label="Username" 
+        placeholder="Enter your username" 
+        value={username}
+        onChange={setUsername}
+      />
+    </div>
+  );
+}
+```
+
+## Documentation Structure
+
+For each component, you will find:
+
+- **Overview**: Description and usage examples
+- **Props**: API reference
+- **Variants**: Different styles and configurations
+- **Accessibility**: Notes on ARIA attributes and keyboard interactions
+- **Best Practices**: Do's and Don'ts
+
+## Accessibility
+
+All components in this design system are built with accessibility in mind. They comply with WCAG 2.1 guidelines and support:
+
+- Keyboard navigation
+- Screen readers
+- High contrast mode
+- Focus management
+- Semantic HTML
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- iOS Safari (latest)
+- Android Chrome (latest) 
