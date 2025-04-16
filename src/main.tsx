@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Typography } from './components/Typography/Typography';
 import { TextInput } from './components/DataEntry/TextInput';
-import { Toast, ToastContainer } from './components/Feedback/Toast';
+import { Toast } from './components/Feedback/Toast';
+import { ToastContainer } from './components/Feedback/ToastContainer';
 import './styles/globals.css';
 
 const App = () => {
