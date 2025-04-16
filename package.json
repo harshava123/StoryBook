@@ -28,9 +28,10 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npx vite build",
+    "build": "npm run build-main && npm run build-storybook",
+    "build-main": "node ./node_modules/vite/bin/vite.js build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build -o dist/storybook"
   },
   "eslintConfig": {
     "extends": [
